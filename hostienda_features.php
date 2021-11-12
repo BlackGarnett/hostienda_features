@@ -36,26 +36,24 @@
 
 	    		parent::install()
 	    		&& $this->registerHook('displayAdminProductsMainStepRightColumnBottom')
-	    		&& $this->registerHook('displayBackOfficeHeader')
+	    		&& $this->registerHook('BackOfficeHeader')
 	    		
 	    	);
 		}
 
 		public function hookDisplayAdminProductsMainStepRightColumnBottom() {
-	
+			
 			return $this->display(__FILE__,'views/templates/hook/hostienda_features.tpl');
 		}
 
-		public function hookDisplayBackOfficeHeader(){
 
-			$this->context->controller->addCSS([
-	            $this->getPathUri() . 'views/css/hostienda_features.css',
-        	]);
-			$this->context->controller->addJS([
-	            $this->getPathUri() . 'views/js/hostienda_features.js',
-        	]);
-		}
-
+		public function hookBackOfficeHeader()
+	    {
+        
+            $this->context->controller->addJS($this->_path.'views/js/hostienda_features.js');
+            $this->context->controller->addCSS($this->_path.'views/css/hostienda_features.css');
+        
+	    }
 		public function uninstall(){
 			return(
 				parent::uninstall()
