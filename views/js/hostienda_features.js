@@ -106,6 +106,7 @@ $(document).ready( function(){
 				6,
 				7,
 				19,
+				66,
 				23,
 				30,
 				22,
