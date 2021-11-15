@@ -143,7 +143,7 @@ $(document).ready( function(){
 	$('#hostienda_features_select').on('change', function(){
 
 		feature = features.find(feature => feature.id == $(this).val());
-			if($('.row.product-feature').length>0){
+			if($('.row.product-feature').length>0 || !feature){
 				$('.row.product-feature').remove();
 			}
 
