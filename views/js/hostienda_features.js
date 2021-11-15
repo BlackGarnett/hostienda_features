@@ -145,12 +145,14 @@ $(document).ready( function(){
 		feature = features.find(feature => feature.id == $(this).val());
 			if($('.row.product-feature').length>0 || !feature){
 				$('.row.product-feature').remove();
+			}else {
+				$.each(feature.values, function(index, el) {
+					$('#add_feature_button').click();
+					$('.feature-selector.custom-select.select2-hidden-accessible').last().val(el).trigger('change');
+				});
 			}
 
-		$.each(feature.values, function(index, el) {
-			$('#add_feature_button').click();
-			$('.feature-selector.custom-select.select2-hidden-accessible').last().val(el).trigger('change');
-		});
+
 	});
 
 });
