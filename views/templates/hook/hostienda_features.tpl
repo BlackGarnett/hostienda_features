@@ -6,8 +6,7 @@
 			</label>
 
 			<select class="form-control" id="hostienda_features_select">
-				 <option value="" disabled selected>Plantillas:</option>
-				
+				 <option value="0" selected>SIN PLANTILLAS</option>
 			</select>
 		</div>	
 	</div>

@@ -29,14 +29,18 @@ $(document).ready( function(){
 	$('#hostienda_features_select').on('change', function(){
 
 		feature = features.find(feature => feature.id == $(this).val());
+
+		if (feature) {
 			if($('.row.product-feature').length>0){
 				$('.row.product-feature').remove();
 			}
-
-		$.each(feature.values, function(index, el) {
-			$('#add_feature_button').click();
-			$('.feature-selector.custom-select.select2-hidden-accessible').last().val(el).trigger('change');
-		});
+			$.each(feature.values, function(index, el) {
+				$('#add_feature_button').click();
+				$('.feature-selector.custom-select.select2-hidden-accessible').last().val(el).trigger('change');
+			});
+		}else{
+			$('.row.product-feature').remove();
+		}
 	});
 
 });
